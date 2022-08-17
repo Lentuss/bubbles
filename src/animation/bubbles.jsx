@@ -1,7 +1,10 @@
 import React, { useRef, useState } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { PerspectiveCamera, Instances, OrbitControls } from '@react-three/drei';
+
 import { MathUtils } from 'three';
+
+import HTMLContent from 'components/ContentContainer/ContentContainer';
 
 const randPosX = () => {
   return (Math.random() - 0.5) * 2;
@@ -93,18 +96,46 @@ function Bubbles() {
 }
 
 const BubbleCanvas = () => {
+  const domContent = useRef();
   return (
     <Canvas>
-      <PerspectiveCamera>
+      <PerspectiveCamera
+      //   position={[1.5, 0, 0]}
+      >
         <OrbitControls />
-        <pointLight intensity={5} distance={20} position={[-10, 10, 10]} />
-        <directionalLight
-          intensity={5}
-          position={[-10, -10, -10]}
-          color="#24A7EF"
-        />
         <ambientLight />
+        <pointLight
+          intensity={5}
+          distance={20}
+          position={[-10, 10, 10]}
+          //   castShadow
+          //   shadow-mapSize-width={1024}
+          //   shadow-mapSize-height={1024}
+          //   shadow-camera-far={50}
+          //   shadow-camera-left={-10}
+          //   shadow-camera-right={10}
+          //   shadow-camera-top={10}
+          //   shadow-camera-bottom={-10}
+        />
+        <directionalLight
+          intensity={1.5}
+          position={[10, -10, -10]}
+          color="#24A7EF"
+          //   castShadow
+          //   shadow-mapSize-width={1024}
+          //   shadow-mapSize-height={1024}
+          //   shadow-camera-far={50}
+          //   shadow-camera-left={-10}
+          //   shadow-camera-right={10}
+          //   shadow-camera-top={10}
+          //   shadow-camera-bottom={-10}
+        />
         <Bubbles />
+        <HTMLContent domContent={domContent} bgColor=" #3e374a" position={250}>
+          <p>It will be </p>
+          <p>something interesting </p>
+          <p>here</p>
+        </HTMLContent>
       </PerspectiveCamera>
     </Canvas>
   );
