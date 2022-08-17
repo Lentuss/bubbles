@@ -1,11 +1,18 @@
 import BubbleCanvas from 'animation/bubbles';
 // import HTMLContent from './ContentContainer/ContentContainer';
-// import styled from 'styled-components';
+import Header from './Header';
+import SearchModal from './SearchModal';
 
 export const App = () => {
   return (
     <>
-      <BubbleCanvas />
+      <BubbleCanvas camera={{ position: [-100, 0, 120], fov: 70 }}>
+        <Header />
+        <SearchModal />
+        <p>It will be </p>
+        <p>something interesting </p>
+        <p>here</p>
+      </BubbleCanvas>
     </>
   );
 };
