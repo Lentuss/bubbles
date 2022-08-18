@@ -1,16 +1,30 @@
 {
   "files": {
     "main.css": "/bubbles/static/css/main.02557f3c.css",
-    "main.js": "/bubbles/static/js/main.0135f13a.js",
+    "main.js": "/bubbles/static/js/main.b6a1dfbc.js",
+    "static/js/749.cf27d958.chunk.js": "/bubbles/static/js/749.cf27d958.chunk.js",
+    "static/js/887.076246f1.chunk.js": "/bubbles/static/js/887.076246f1.chunk.js",
+    "static/css/200.e5c9075e.chunk.css": "/bubbles/static/css/200.e5c9075e.chunk.css",
+    "static/js/200.9ab438be.chunk.js": "/bubbles/static/js/200.9ab438be.chunk.js",
+    "static/js/569.c00c9fd5.chunk.js": "/bubbles/static/js/569.c00c9fd5.chunk.js",
+    "static/js/170.9a986f07.chunk.js": "/bubbles/static/js/170.9a986f07.chunk.js",
+    "static/js/426.90b08e76.chunk.js": "/bubbles/static/js/426.90b08e76.chunk.js",
     "static/media/KyivTypeTitling-Medium.ttf": "/bubbles/static/media/KyivTypeTitling-Medium.fc281b855aaba949b291.ttf",
     "static/media/KyivTypeTitling-Medium.woff2": "/bubbles/static/media/KyivTypeTitling-Medium.48bd9387b8b5ee616b47.woff2",
     "static/media/ava.png": "/bubbles/static/media/ava.59f5a9c6e06b28892baa.png",
     "index.html": "/bubbles/index.html",
     "main.02557f3c.css.map": "/bubbles/static/css/main.02557f3c.css.map",
-    "main.0135f13a.js.map": "/bubbles/static/js/main.0135f13a.js.map"
+    "main.b6a1dfbc.js.map": "/bubbles/static/js/main.b6a1dfbc.js.map",
+    "749.cf27d958.chunk.js.map": "/bubbles/static/js/749.cf27d958.chunk.js.map",
+    "887.076246f1.chunk.js.map": "/bubbles/static/js/887.076246f1.chunk.js.map",
+    "200.e5c9075e.chunk.css.map": "/bubbles/static/css/200.e5c9075e.chunk.css.map",
+    "200.9ab438be.chunk.js.map": "/bubbles/static/js/200.9ab438be.chunk.js.map",
+    "569.c00c9fd5.chunk.js.map": "/bubbles/static/js/569.c00c9fd5.chunk.js.map",
+    "170.9a986f07.chunk.js.map": "/bubbles/static/js/170.9a986f07.chunk.js.map",
+    "426.90b08e76.chunk.js.map": "/bubbles/static/js/426.90b08e76.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.02557f3c.css",
-    "static/js/main.0135f13a.js"
+    "static/js/main.b6a1dfbc.js"
   ]
 }
