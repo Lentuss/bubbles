@@ -22,8 +22,8 @@ export const App = () => {
   return (
     <BubbleCanvas>
       <Container>
+        <Header />
         <Suspense fallback={<div>Loading...</div>}>
-          <Header />
           <Details id={movieId} />
           <Trends title={'Popular this week'} getId={getId}></Trends>
         </Suspense>
