@@ -13,6 +13,8 @@ const Sphere = props => {
     <mesh
       {...props}
       ref={ref}
+      receiveShadow
+      castShadow
       onPointerOver={e => setHovered(true)}
       onPointerOut={e => setHovered(false)}
     >
@@ -98,48 +100,45 @@ const BubbleCanvas = ({ children }) => {
   const domContent = useRef();
   return (
     <Canvas
+      shadows
       style={{ overflow: 'scroll' }}
       camera={{ position: [-100, 0, 120], fov: 3 }}
     >
-      <PerspectiveCamera
-        position={[0, 0, 0]}
-        //   position={[1.5, 0, 0]}
-      >
+      <PerspectiveCamera position={[0, 0, 0]}>
         <OrbitControls
         //   autoRotate
-        //   enablePan={false}
-        //   enableZoom={false}
-        //   maxPolarAngle={Math.PI / 2}
-        //   minPolarAngle={Math.PI / 2}
         />
         <ambientLight />
+        <spotLight
+          castShadow
+          shadow-mapSize-width={1024}
+          shadow-mapSize-height={1024}
+          shadow-camera-far={70}
+          shadow-camera-left={-10}
+          shadow-camera-right={10}
+          shadow-camera-top={10}
+          shadow-camera-bottom={-10}
+        />
         <pointLight
           intensity={5}
           distance={20}
           position={[-5, 10, 10]}
-          //   castShadow
-          //   shadow-mapSize-width={1024}
-          //   shadow-mapSize-height={1024}
-          //   shadow-camera-far={50}
-          //   shadow-camera-left={-10}
-          //   shadow-camera-right={10}
-          //   shadow-camera-top={10}
-          //   shadow-camera-bottom={-10}
+          castShadow
+          receiveShadow
+          shadow-mapSize-width={1024}
+          shadow-mapSize-height={1024}
+          shadow-camera-far={50}
+          shadow-camera-left={-10}
+          shadow-camera-right={10}
+          shadow-camera-top={10}
+          shadow-camera-bottom={-10}
         />
         <directionalLight
           intensity={1.5}
           position={[10, -10, -10]}
           color="#24A7EF"
-          //   castShadow
-          //   shadow-mapSize-width={1024}
-          //   shadow-mapSize-height={1024}
-          //   shadow-camera-far={50}
-          //   shadow-camera-left={-10}
-          //   shadow-camera-right={10}
-          //   shadow-camera-top={10}
-          //   shadow-camera-bottom={-10}
         />
-        <Bubbles />
+        <Bubbles receiveShadow castShadow />
         <HTMLContent domContent={domContent} bgColor=" #373859" position={250}>
           {children}
         </HTMLContent>
