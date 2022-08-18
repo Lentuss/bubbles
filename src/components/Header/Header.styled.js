@@ -3,10 +3,13 @@ import styled from 'styled-components';
 export const HeaderContainer = styled.header`
   display: flex;
   align-items: center;
-  padding: 38px 38px 0 86px;
+  padding: 38px 38px 0 0;
+  margin-bottom: 115px;
 `;
 
 export const CurrentDate = styled.span`
+  font-family: 'Kyiv Type Titling', sans-serif;
+  font-weight: 500;
   display: inline-block;
   color: #c8c8c8;
   margin-left: 42px;
@@ -23,8 +26,9 @@ export const CurrentDate = styled.span`
 export const HeaderBox = styled.div`
   display: flex;
   align-items: center;
+  justify-content: end;
 
-  width: 200px;
+  width: 400px;
   margin: 0 0 0 auto;
 `;
 export const SearchModalBtn = styled.button`

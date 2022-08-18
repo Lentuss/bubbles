@@ -1,7 +1,7 @@
-import SearchModal from 'components/SearchModal';
 import React, { useState } from 'react';
 import moment from 'moment';
 
+import SearchForm from 'components/SearchForm';
 import logoImg from '../../images/logo.png';
 import avatar from '../../images/ava.png';
 
@@ -27,6 +27,7 @@ const Header = () => {
       </a>
       <CurrentDate>{today}</CurrentDate>
       <HeaderBox>
+        <SearchForm isVisible={isVisible} />
         <SearchModalBtn
           type="button"
           aria-label="перемикач меню пошуку"
@@ -40,7 +41,6 @@ const Header = () => {
           <img src={avatar} alt="avatar" height="74" width="74" />
         </AvatarBox>
       </HeaderBox>
-      <SearchModal isVisible={isVisible} />
     </HeaderContainer>
   );
 };

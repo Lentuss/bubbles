@@ -3,11 +3,10 @@ import styled from 'styled-components';
 export const SearchBar = styled.form`
   display: flex;
   align-items: center;
-  width: 100%;
-  max-width: 600px;
+  max-width: 300px;
+
   background-color: #fff;
   border-radius: 3px;
-  overflow: hidden;
 `;
 
 export const SearchButton = styled.button`

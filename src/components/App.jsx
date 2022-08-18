@@ -1,23 +1,30 @@
 import BubbleCanvas from 'animation/bubbles';
-// import HTMLContent from './ContentContainer/ContentContainer';
+import React, { useState } from 'react';
+
+import styled from 'styled-components';
+
 import Header from './Header';
-import SearchModal from './SearchModal';
+import Details from './Details/Details';
+import Trends from './Trends/Trends';
 
 export const App = () => {
+  const [movieId, setMovieId] = useState('66732');
+
+  const getId = id => {
+    setMovieId(id);
+  };
+
   return (
-    <>
-      <BubbleCanvas camera={{ position: [-100, 0, 120], fov: 70 }}>
+    <BubbleCanvas>
+      <Container>
         <Header />
-        <SearchModal />
-        <p>It will be </p>
-        <p>something interesting </p>
-        <p>here</p>
-      </BubbleCanvas>
-    </>
+        <Details id={movieId} />
+        <Trends title={'Popular this week'} getId={getId}></Trends>
+      </Container>
+    </BubbleCanvas>
   );
 };
 
-// const Test = styled.div`
-//   background-color: #3e374a;
-//   font-size: 42px;
-// `;
+const Container = styled.div`
+  padding-left: 86px;
+`;

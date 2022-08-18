@@ -18,7 +18,7 @@ const Sphere = props => {
     >
       <sphereGeometry args={[randScale(), 32, 32, 4, 7]} />
       <meshStandardMaterial
-        color={hovered ? '#DC8827' : '#176ACB'}
+        color={hovered ? '#DC8827' : '#4665B0'}
         roughness={0.45}
       />
     </mesh>
@@ -58,7 +58,7 @@ console.log();
 const randScale = () => {
   return Math.random() - 0.2;
 };
-const parts = Array.from({ length: 30 }, () => ({
+const parts = Array.from({ length: 40 }, () => ({
   position: [randPosX(), randPosY(), randPosZ()],
 }));
 
@@ -97,7 +97,10 @@ function Bubbles() {
 const BubbleCanvas = ({ children }) => {
   const domContent = useRef();
   return (
-    <Canvas>
+    <Canvas
+      style={{ overflow: 'scroll' }}
+      camera={{ position: [-100, 0, 120], fov: 3 }}
+    >
       <PerspectiveCamera
         position={[0, 0, 0]}
         //   position={[1.5, 0, 0]}
@@ -137,7 +140,7 @@ const BubbleCanvas = ({ children }) => {
           //   shadow-camera-bottom={-10}
         />
         <Bubbles />
-        <HTMLContent domContent={domContent} bgColor=" #3e374a" position={250}>
+        <HTMLContent domContent={domContent} bgColor=" #373859" position={250}>
           {children}
         </HTMLContent>
       </PerspectiveCamera>

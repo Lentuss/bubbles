@@ -18,15 +18,6 @@ export const getTrends = async () => {
   }
 };
 
-export const getSearched = async searchQuery => {
-  try {
-    const link = `search/tv?api_key=${API_KEY}&language=en-US&page=1&query=${searchQuery}&include_adult=false`;
-    return await getTVShowData(link);
-  } catch (error) {
-    console.log(error.message);
-  }
-};
-
 export const getDetails = async id => {
   try {
     const link = `tv/${id}?api_key=${API_KEY}&language=en-US`;

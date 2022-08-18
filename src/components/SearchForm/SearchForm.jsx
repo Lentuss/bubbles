@@ -7,40 +7,39 @@ import {
   SearchInput,
 } from './SearchForm.styled';
 
-const SearchForm = ({ onSubmit }) => {
+const SearchForm = ({ isVisible }) => {
   const [searchQuery, setSearchQuery] = useState('');
-  const queryValue = '';
 
   const handleInput = e => {
     if (e.currentTarget.value.toLowerCase() !== searchQuery)
-      setSearchQuery({ query: e.currentTarget.value.toLowerCase() });
+      setSearchQuery(e.currentTarget.value.toLowerCase());
   };
 
   const handleSubmit = e => {
     e.preventDefault();
 
-    if (queryValue.trim() === '') {
+    if (searchQuery.trim() === '') {
       alert('Enter the query');
       return;
     }
-
-    onSubmit(queryValue);
   };
   return (
-    <SearchBar onSubmit={handleSubmit}>
-      <SearchButton type="submit">
-        <FormLabel>Search</FormLabel>
-      </SearchButton>
-      <SearchInput
-        type="text"
-        autocomplete="off"
-        autoFocus
-        placeholder="Search TV show"
-        name="query"
-        value={queryValue}
-        onChange={handleInput}
-      />
-    </SearchBar>
+    isVisible && (
+      <SearchBar onSubmit={handleSubmit}>
+        <SearchButton type="submit">
+          <FormLabel>Search</FormLabel>
+        </SearchButton>
+        <SearchInput
+          type="text"
+          autocomplete="off"
+          autoFocus
+          placeholder="Search TV show"
+          name="query"
+          value={searchQuery}
+          onChange={handleInput}
+        />
+      </SearchBar>
+    )
   );
 };
 
